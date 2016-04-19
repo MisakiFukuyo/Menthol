@@ -5,16 +5,14 @@
     if(mentholRoot === undefined || mentholRoot === null){
       return;
     }
-    
+
     function defaultMappingFunc(m,ma,te){
       ma.forEach(function(e){
         te[e].textContent = e + ' : ' + m[e];
       })
     }
 
-    Menthol = function(name,modelsArray,mapppingFunc,opt){
-      var leRootElem = (opt && opt.rootTag) ? opt.rootTag : 'div';
-      var leLogElem =  (opt && opt.rootTag) ? opt.elemTag : 'div';
+    Menthol = function(name,modelsArray,mapppingFunc){
       mapppingFunc = typeof mapppingFunc === 'function' ? mapppingFunc : defaultMappingFunc;
 
       var textEndPoints = [];
